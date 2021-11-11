@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_todoa/components/to_do_list.dart';
+import 'package:flutter_todoa/components/add_button.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -14,17 +16,18 @@ class HomePage extends StatelessWidget {
       body: Column(
         children: [
           Expanded(
-            flex: 3,
+            flex: 2,
             child: Image(
               width: MediaQuery.of(context).size.width,
               fit: BoxFit.cover,
               image: const AssetImage('assets/images/header.jpg'),
             ),
           ),
-          Expanded(
-            flex: 9,
+          const Expanded(
+            flex: 10,
             child: ToDoList(),
           ),
+          addButton,
         ],
       ),
     );
